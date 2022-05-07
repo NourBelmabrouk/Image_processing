@@ -1,3 +1,4 @@
+from cv2 import line
 from lab1 import *
 
 def histogram_equalization(filename):
@@ -37,3 +38,18 @@ def histogram_equalization(filename):
         hs.append(tot)
 
     return hs
+
+
+def linear_transformation(filename,point1,point2):
+    data=read_image_pgm(filename)
+    new_matrix=data["matrix"].copy()
+    for i in range(data["line"]):
+        for j in range(data["column"]):
+            if data["matrix"][i][j] <= point1[0] :
+                new_matrix[i][j]= (point1[1]/point1[0])*data["matrix"][i][j]
+            elif (point1[0]<data["matrix"][i][j] and data["matrix"][i][j]<=point2[0]):
+                new_matrix[i][j]=((point2[1]-point1[1])/(point2[0]-point1[0]))*(data["matrix"][i][j]-point1[0])+point1[1]
+            else:
+                new_matrix[i][j]=((data["lvl_gray"]-point2[1])/(data["lvl_gray"]-point2[0]))*(data["matrix"][i][j]-point2[0])+point2[1]
+    
+    return new_matrix
