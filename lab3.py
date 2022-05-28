@@ -76,4 +76,4 @@ def median_filter(filename,n):
 
 noise=np.asarray(add_noise("images/mona.pgm"))
 print(noise)
-plt.imshow(noise)
+plt.imshow(noise,cmap="gray")
