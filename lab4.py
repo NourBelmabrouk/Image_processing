@@ -3,17 +3,6 @@ import numpy as np
 from PIL import Image
 from matplotlib import pyplot as plt
 
-def all_greater(list1, list2):
-    for i in range(len(list1)):
-        if list1[i] < list2[i]:
-            return False
-    return True
-
-def one_greater(list1, list2):
-    for i in range(len(list1)):
-        if list1[i] > list2[i]:
-            return True
-    return False
 
 #mode=None: manual thresholding
 #mode=and: manual thresholding with and
@@ -50,6 +39,18 @@ def manual_threshold(image, threshold, mode=None):
                         new_image[i][j][k] = image[i][j][k]
     return new_image
 
+def all_greater(list1, list2):
+    for i in range(len(list1)):
+        if list1[i] < list2[i]:
+            return False
+    return True
+
+def one_greater(list1, list2):
+    for i in range(len(list1)):
+        if list1[i] > list2[i]:
+            return True
+    return False
+    
 #execution:
 #img = Image.open("assets/house.ppm").convert('RGB')
 #img_array = np.asarray(img)
