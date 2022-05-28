@@ -1,4 +1,8 @@
 import random
+import cv2
+from matplotlib import pyplot as plt
+
+from matplotlib import image
 from lab1 import *
 import numpy as np
 
@@ -68,3 +72,8 @@ def median_filter(filename,n):
             result[line][column]=np.median(vals)
 
     return result
+
+
+noise=np.asarray(add_noise("images/mona.pgm"))
+print(noise)
+plt.imshow(noise)
