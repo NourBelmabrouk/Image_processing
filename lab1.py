@@ -32,7 +32,6 @@ def read_image_pgm(filename):
     
     matrix=np.reshape(np.array(data),(line,column))
     file.close()
-    
     return {
         "line":line,
         "column":column,

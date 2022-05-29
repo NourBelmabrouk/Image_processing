@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 #mode=None: manual thresholding
 #mode=and: manual thresholding with and
 #mode=or: manual thresholding with or
-def manual_threshold(image, threshold, mode=None):
+def manual_threshold(image, threshold=[155, 155, 155], mode=None):
     new_image = np.zeros(image.shape, dtype=int)
     if mode != None:
         if (mode.upper() == "AND"):

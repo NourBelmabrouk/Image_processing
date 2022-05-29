@@ -70,10 +70,6 @@ def median_filter(filename,n):
                         val=data["matrix"][i][j]
                     vals.append(val)
             result[line][column]=np.median(vals)
-
     return result
 
 
-noise=np.asarray(add_noise("images/mona.pgm"))
-print(noise)
-plt.imshow(noise,cmap="gray")
