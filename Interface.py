@@ -4,7 +4,6 @@ from re import T
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
-from GeoTrans import *
 from ImageFiltering import *
 from lab1 import calculate_mean_deviation
 from lab2 import histogram_equalization
@@ -69,11 +68,12 @@ load_image_button.grid(row=0, column=1, sticky=N+W+E, columnspan=2, pady=10)
 #####################
 
 i=0
-def SaveImage():
+def SaveImage():    
     global i
     i+=1
     resultafficheToSave = read_image_pgm(filename)
     write_image_pgm("images/images_results/result_image"+str(i)+".pgm",resultaffiche,resultafficheToSave["line"],resultafficheToSave["column"],resultafficheToSave["lvl_gray"])
+
     
 save_image_button = ttk.Button(buttons_frame, text="save Image...", command=SaveImage)
 save_image_button.grid(row=1, column=1, sticky=N+W+E, columnspan=2, pady=10)
@@ -245,7 +245,7 @@ label_mean.grid(row=33, column=1, columnspan=2, pady=(0, 8))
 label_deviation=ttk.Label(buttons_frame,text="Deviation is: ")
 label_deviation.grid(row=35, column=1, columnspan=2, pady=(0, 8))   
 
-mean_variance_button = ttk.Button(buttons_frame, text="MEAN DEVIATION", command=afficheMeanDeviation)
+mean_variance_button = ttk.Button(buttons_frame, text="Mean & Deviation", command=afficheMeanDeviation)
 mean_variance_button.grid(row=37, column=1, sticky=N+W+E, columnspan=2, pady=4)
 
 
